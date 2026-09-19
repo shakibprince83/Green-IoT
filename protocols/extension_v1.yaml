@@ -1,0 +1,6 @@
+protocol_version: extension-v1.0.0
+status: exploratory
+experiment_families: [extension_architecture, extension_operator, extension_device, extension_batch, extension_precision, extension_optimized]
+architectures: [simple_cnn, resnet18, mobilenet_v2, efficientnet_b0, vit]
+datasets: [cifar10]
+note: Extension outputs are stored and analyzed separately from core_framework.

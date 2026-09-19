@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+data/
+results/raw/*.json
+results/telemetry/*
+results/processed/*
+results/tables/*
+results/figures/*
+artifacts/splits/*.npz
+artifacts/initializations/*.npz
+artifacts/environments/*
+!**/.gitkeep

@@ -1,0 +1,4 @@
+smoke: {classification: SMOKE, datasets: [fixture], seeds: [11], epochs: 1, max_samples: 256}
+pilot: {classification: PILOT, datasets: [mnist, fashion_mnist], seeds: [11, 22, 33, 44, 55], epochs: 10}
+official: {classification: OFFICIAL, protocol: protocols/core_v1.yaml}
+extension: {classification: EXTENSION, protocol: protocols/extension_v1.yaml}

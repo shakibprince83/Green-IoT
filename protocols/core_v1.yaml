@@ -1,0 +1,23 @@
+protocol_version: core-v1.0.0
+status: locked
+study:
+  title: GREEN AI BENCHMARK
+  subtitle: A Controlled Comparison of Equivalent Workloads across PyTorch & TensorFlow
+  experiment_family: core_framework
+datasets: [mnist, fashion_mnist]
+split: {train: 54000, validation: 6000, test: 10000, stratified: true}
+model: {name: matched_cnn, expected_parameters: 1199882, input_shape: [28, 28, 1], classes: 10}
+optimizer:
+  name: adam
+  learning_rate: 0.001
+  beta1: 0.9
+  beta2: 0.999
+  epsilon: 0.0000001
+  amsgrad: false
+  weight_decay: 0.0
+  gradient_clipping: null
+training: {batch_size: 64, epochs: 10, precision: fp32, augmentation: false, early_stopping: false, loss: cross_entropy_logits, loss_reduction: mean}
+execution: {pytorch: eager, tensorflow: eager, torch_compile: false, tf_function: false, xla: false, mixed_precision: false, deterministic: true}
+paired_seeds: [11, 22, 33, 44, 55]
+statistics: {alpha: 0.05, correction_primary: bonferroni, correction_sensitivity: [holm, benjamini_hochberg], bootstrap_samples: 10000, macro_f1_equivalence_margin: 0.01, equivalence_test_primary: false}
+classification: OFFICIAL

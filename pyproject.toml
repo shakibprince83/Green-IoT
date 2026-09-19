@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "greenbench"
+version = "0.1.0"
+description = "Controlled equivalent workloads across PyTorch and TensorFlow"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = ["numpy>=1.24", "pydantic>=2", "PyYAML>=6", "scipy>=1.10"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+pytorch = ["torch>=2.2", "torchvision>=0.17"]
+tensorflow = ["tensorflow>=2.15"]
+measurement = ["psutil>=5.9", "pynvml>=11", "codecarbon>=2.4"]
+dashboard = ["streamlit>=1.35", "pandas>=2", "plotly>=5"]
+
+[project.scripts]
+greenbench = "greenbench.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+markers = ["framework: requires ML framework", "integration: integration test"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]

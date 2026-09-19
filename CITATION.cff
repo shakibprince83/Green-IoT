@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it."
+title: "GREEN AI BENCHMARK: A Controlled Comparison of Equivalent Workloads across PyTorch & TensorFlow"
+type: software
+version: 0.1.0
+date-released: 2026-09-19
+license: MIT
+repository-code: "https://github.com/shakibprince83/Green-IoT"
+authors:
+  - family-names: Hassan Prince
+    given-names: Md Shakibul
